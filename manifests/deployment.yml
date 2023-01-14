@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: msftseanpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msftseanpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: msftseanpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: msftseanpipelinesjavascriptdocker 
+          image: acr20230101.azurecr.io/msftseanpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
